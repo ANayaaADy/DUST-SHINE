@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Доставка и оплата | DUST&SHINE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Гарантия, что контент не выходит за пределы шапки */
+    .delivery {
+      width: 1360px;
+      max-width: 100%;
+      margin: 80px auto 0;  /* ← отступ сверху как был изначально */
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 1400px) {
+      .delivery {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ШАПКА (исправлена ошибка с незакрытым тегом) -->
+  <header class="header">
+    <a href="index.html" class="header-logo">
+      <img src="images/logo.png" alt="DUST&SHINE">
+    </a>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="category.html">Категории товаров</a>
+      <a href="delivery.html" class="active-nav">Доставка и оплата</a>
+      <a href="contacs.html">Контакты</a>
+      <a href="about.html">О нас</a>
+    </nav>
+    <div class="icons">
+      <a href="account.html" class="icon-btn" title="Личный кабинет">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 21c0-3.2-3.6-5-8-5s-8 1.8-8 5"></path>
+          <circle cx="12" cy="8" r="4"></circle>
+        </svg>
+      </a>
+      <a href="cart.html" class="icon-btn" title="Корзина">
+        <svg viewBox="0 0 24 24">
+          <circle cx="9" cy="20" r="1.5"></circle>
+          <circle cx="18" cy="20" r="1.5"></circle>
+          <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H7"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ОСНОВНОЙ БЛОК -->
+  <section class="delivery">
+    <h1 class="delivery-title">Доставка и оплата</h1>
+    <div class="delivery-grid">
+      <div class="delivery-card">
+        <h2>Доставка</h2>
+        <p>Мы бережно упаковываем каждую вещь, сохраняя её состояние и характер.</p>
+        <ul>
+          <li>Доставка по России: 2–7 дней</li>
+          <li>Курьерская доставка по Санкт-Петербургу</li>
+          <li>Самовывоз по договоренности</li>
+        </ul>
+      </div>
+      <div class="delivery-card">
+        <h2>Оплата</h2>
+        <p>Вы можете выбрать удобный способ оплаты:</p>
+        <ul>
+          <li>Онлайн-оплата</li>
+          <li>Наличные при получении</li>
+        </ul>
+      </div>
+      <div class="delivery-card wide">
+        <h2>Упаковка и забота</h2>
+        <p>Каждая вещь проходит проверку и аккуратно упаковывается. Мы используем материалы, которые защищают изделие и сохраняют его эстетику.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h2>DUST&SHINE</h2>
+        <p>Винтажные аксессуары с историей,<br>которые продолжают жить в современности.</p>
+      </div>
+      <div class="footer-center">
+        <a href="index.html">Главная</a>
+        <a href="category.html">Категории товаров</a>
+        <a href="delivery.html">Доставка и оплата</a>
+        <a href="about.html">О нас</a>
+      </div>
+      <div class="footer-right">
+        <p>dustandshine@gmail.com</p>
+        <p>+7 (999) 999-99-99</p>
+        <div class="footer-authors">
+          <span>Авторы проекта:</span>
+          <p>Бежанова Диана</p>
+          <p>Дыняк Анастасия</p>
+          <p>Группа 2-ГД-4</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

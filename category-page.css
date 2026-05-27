@@ -1,0 +1,534 @@
+/* ========== category-page.css ========== */
+/* Уникальные стили для страницы категорий, сохраняющие стилистику главной */
+
+/* ========== HERO ========== */
+
+.category-hero{
+  width:1360px;
+
+  margin:70px auto 90px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:stretch;
+
+  gap:60px;
+}
+
+/* LEFT */
+
+.category-hero-left{
+  width:620px;
+}
+
+.category-hero-title{
+  font-family:'Beladonna Modern', serif;
+
+  font-size:64px;
+  font-weight:normal;
+
+  color:#3F020A;
+
+  margin-bottom:30px;
+}
+
+.category-hero-text {
+  min-height: 224px;
+
+  padding: 26px 32px;
+
+  background-color: #F3DDB6;
+
+  border: 2px solid #240505;
+
+  border-radius: 30px;
+
+  font-family: 'Onest', sans-serif;
+
+  font-size: 22px;
+  line-height: 1.6;
+
+  color: #3F020A;
+}
+/* RIGHT */
+
+.category-hero-right img{
+  width:620px;
+  height:420px;
+
+  object-fit:cover;
+
+  border-radius:32px;
+
+  display:block;
+}
+/* ========== СЕКЦИЯ 2: СЕТКА КАТЕГОРИЙ ========== */
+.categories-grid-section {
+  width: 1360px;
+  margin-top: 100px;
+}
+
+.section-caption {
+  padding: 0 36px;
+  margin-bottom: 56px;
+}
+
+.beladonna-title {
+  font-family: 'Beladonna Modern', serif;
+  font-size: 64px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #4A0D17;
+  margin-bottom: 16px;
+}
+
+.caption-line {
+  width: 80px;
+  height: 2px;
+  background-color: #4A0D17;
+  margin-top: 8px;
+}
+
+.beladonna-title.left-align {
+  text-align: left;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 36px;
+}
+
+.category-card {
+  background: #E6D2AE;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(48, 50, 25, 0.25);
+}
+
+.card-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-image-wrapper::after {
+  content: "🔍";
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(48, 50, 25, 0.7);
+  color: #F3DDB6;
+  padding: 8px 12px;
+  border-radius: 30px;
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.3s ease;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  font-family: 'Onest', sans-serif;
+}
+
+.card-image-wrapper:hover::after {
+  opacity: 1;
+}
+
+.category-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.category-card:hover .category-img {
+  transform: scale(1.03);
+}
+
+.card-info {
+  padding: 28px 24px 32px;
+}
+
+.card-category {
+  font-family: 'Beladonna Modern', serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #4A0D17;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.card-desc {
+  font-family: 'Onest', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #4A2D2D;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.card-link {
+  font-family: 'Onest', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #303219;
+  text-decoration: none;
+  border-bottom: 2px solid #303219;
+  padding-bottom: 4px;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.card-link:hover {
+  color: #4A0D17;
+  border-bottom-color: #4A0D17;
+  transform: translateX(4px);
+}
+.categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+/* Скругление углов для карточек категорий */
+.category-card {
+  border-radius: 32px;
+}
+
+/* Скругление верхних углов для обёртки и самого изображения (опционально, но для красоты) */
+.card-image-wrapper {
+  border-radius: 32px 32px 0 0;
+}
+
+.category-img {
+  border-radius: 32px 32px 0 0;
+}
+
+/* ========== СЕКЦИЯ 3: ИНСПИРАЦИЯ И ПРЕИМУЩЕСТВА ========== */
+.inspiration-advantage {
+  width: 1360px;
+  margin-top: 100px;
+  background-color: #303219;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 48px;  
+}
+
+.inspiration-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.inspiration-text-block {
+  flex: 1;
+  padding: 60px 40px 60px 60px;
+  background: #303219;
+}
+
+.inspiration-badge {
+  font-family: 'Onest', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F3DDB6;
+  opacity: 0.7;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.inspiration-text-block .beladonna-title {
+  color: #F3DDB6;
+  margin-bottom: 24px;
+  font-size: 54px;
+  line-height: 1.2;
+}
+
+.inspiration-paragraph {
+  font-family: 'Onest', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #F3DDB6;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.advantage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px 0;
+}
+
+.advantage-list li {
+  font-family: 'Onest', sans-serif;
+  font-size: 16px;
+  color: #F3DDB6;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+}
+
+.advantage-list li::before {
+  content: "✦";
+  color: #E6D2AE;
+  font-size: 18px;
+}
+
+.secondary-btn {
+  background-color: #F3DDB6;
+  color: #303219;
+  border: none;
+  transition: 0.3s;
+}
+
+.secondary-btn:hover {
+  background-color: #E6D2AE;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.inspiration-media {
+  flex: 1;
+  min-height: 480px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.inspiration-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.inspiration-media:hover img {
+  transform: scale(1.02);
+}
+
+/* Активная навигация (подсветка текущей страницы) */
+.nav a.active-nav {
+  opacity: 1;
+  position: relative;
+}
+
+.nav a.active-nav::after {
+  width: 100%;
+  background-color: #F3DDB6;
+}
+
+/* ========== АДАПТИВ ДЛЯ СТРАНИЦЫ КАТЕГОРИЙ ========== */
+@media (max-width: 1450px) {
+  .category-hero,
+  .categories-grid-section,
+  .inspiration-advantage {
+    width: 95%;
+  }
+  
+  .inspiration-inner {
+    flex-direction: column;
+  }
+  
+  .inspiration-text-block {
+    padding: 50px 40px;
+  }
+  
+  .inspiration-media {
+    width: 100%;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .category-hero-title {
+    font-size: 54px;
+  }
+  
+  .category-hero-subtitle {
+    font-size: 18px;
+  }
+  
+  .beladonna-title,
+  .inspiration-text-block .beladonna-title {
+    font-size: 48px;
+  }
+  
+  .categories-grid {
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .card-info {
+    padding: 22px 20px 26px;
+  }
+  
+  .card-category {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .category-hero {
+    margin-top: 30px;
+    min-height: 380px;
+  }
+  
+  .category-hero-overlay {
+    padding: 50px 20px;
+  }
+  
+  .category-hero-title {
+    font-size: 42px;
+  }
+  
+  .hero-tags {
+    gap: 10px;
+  }
+  
+  .hero-tag {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+  
+  .beladonna-title {
+    font-size: 38px;
+  }
+  
+  .section-caption {
+    padding: 0 20px;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 32px;
+  }
+  
+  .category-img {
+    height: 320px;
+  }
+  
+  .inspiration-text-block {
+    padding: 40px 24px;
+  }
+  
+  .inspiration-text-block .beladonna-title {
+    font-size: 36px;
+  }
+  
+  .inspiration-paragraph {
+    font-size: 16px;
+  }
+  
+  .advantage-list li {
+    font-size: 14px;
+  }
+  
+  .card-desc {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .category-hero-title {
+    font-size: 34px;
+  }
+  
+  .category-hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .beladonna-title {
+    font-size: 32px;
+  }
+  
+  .inspiration-text-block .beladonna-title {
+    font-size: 30px;
+  }
+  
+  .card-category {
+    font-size: 22px;
+  }
+  
+  .card-info {
+    padding: 18px 16px 22px;
+  }
+}
+
+/* Анимации для появления карточек */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-card {
+  animation: fadeInUp 0.6s ease backwards;
+}
+
+.category-card:nth-child(1) { animation-delay: 0.05s; }
+.category-card:nth-child(2) { animation-delay: 0.12s; }
+.category-card:nth-child(3) { animation-delay: 0.19s; }
+.category-card:nth-child(4) { animation-delay: 0.26s; }
+.category-card:nth-child(5) { animation-delay: 0.33s; }
+
+/* Стили для состояния загрузки изображений */
+.category-img {
+  background-color: #E6D2AE;
+}
+
+/* Улучшенный hover для кнопок */
+.shop-btn {
+  transition: all 0.3s ease;
+}
+
+/* Эффект для карточек при клике */
+.category-card:active {
+  transform: scale(0.98);
+}
+.category-hero-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.category-hero-text{
+  margin-top:26px;
+
+  max-width:820px;
+
+  padding:22px 34px;
+
+  background-color:#F3DDB6;
+
+  border:2px solid #240505;
+
+  border-radius:28px;
+
+  font-family:'Onest', sans-serif;
+
+  font-size:22px;
+  line-height:1.6;
+
+  color:#3F020A;
+
+  text-align:center;
+}

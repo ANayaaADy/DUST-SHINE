@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Товар | DUST&SHINE — Винтаж с историей</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="category-page.css">
+  <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+<div class="page">
+  
+  <header class="header">
+    <a href="index.html" class="header-logo">
+    <img src="images/logo.png" alt="DUST&SHINE">
+  </a>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="category.html">Категории товаров</a>
+      <a href="delivery.html">Доставка и оплата</a>
+      <a href="contacs.html">Контакты</a>
+      <a href="about.html">О нас</a>
+    </nav>
+    <div class="icons">
+      <a href="account.html" class="icon-btn"><svg viewBox="0 0 24 24"><path d="M20 21c0-3.2-3.6-5-8-5s-8 1.8-8 5"></path><circle cx="12" cy="8" r="4"></circle></svg></a>
+      <a href="cart.html" class="icon-btn"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle><path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H7"></path></svg></a>
+    </div>
+  </header>
+
+  <!-- Кнопка назад -->
+  <div class="back-btn-circle-wrapper">
+    <button class="back-circle" onclick="history.back()" aria-label="Назад">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <main class="product-detail" id="productDetailContainer">
+    <div class="loading-state">Загрузка товара...</div>
+  </main>
+
+  <!-- Блок похожих товаров (3 карточки) -->
+  <section class="similar-products">
+    <div class="section-caption">
+      <h2 class="beladonna-title">Вам также может понравиться</h2>
+      <div class="caption-line"></div>
+    </div>
+    <div class="similar-grid" id="similarGrid"></div>
+  </section>
+</div>
+
+<!-- Модальное окно для изображений -->
+<div id="imageModal" class="image-modal">
+  <span class="modal-close">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div class="modal-caption" id="modalCaption"></div>
+</div>
+
+<script>
+  // ==================== ПОЛНАЯ БАЗА ТОВАРОВ (ID 1–18) ====================
+  const productsDatabase = {
+    1: {
+      id: 1, name: "Саквояж «Классик», 1992", category: "Сумки & Багаж",
+      mainImage: "images/product-bag-1.jpg",
+      fullDescription: "Аутентичный докторский саквояж, Великобритания, 1992 г. Натуральная воловья кожа, медная фурнитура. Внутри два отделения, хлопковая подкладка. Отреставрирован: укреплены углы, новый ремень.",
+      characteristics: {"Материал": "Натуральная кожа","Страна":"Великобритания","Год":"1992","Цвет":"Тёмно-коричневый","Размеры":"28x38x14 см","Состояние":"Отлично"},
+      stock: 3, price: "12 900 ₽", similarIds: [2,3,5]
+    },
+    2: {
+      id: 2, name: "Замшевая сумка-почтальон", category: "Сумки & Багаж",
+      mainImage: "images/product-bag-2.jpg",
+      fullDescription: "Итальянская замша, 80-е. Ремень регулируется до 130 см, внутри карман на молнии. Ручная чистка, водоотталкивающая пропитка.",
+      characteristics: {"Материал":"Замша","Страна":"Италия","Год":"1987","Цвет":"Карамельный","Размеры":"24x30x8 см","Состояние":"Хорошее"},
+      stock: 1, price: "8 500 ₽", similarIds: [1,3,4]
+    },
+    3: {
+      id: 3, name: "Тоут «British Library»", category: "Сумки & Багаж",
+      mainImage: "images/product-bag-3.jpg",
+      fullDescription: "Тиснёная кожа, лимитированная серия для Британской библиотеки, 1995 г. Вместительная, два кармана внутри. Укреплены углы.",
+      characteristics: {"Материал":"Тиснёная кожа","Страна":"Англия","Год":"1995","Цвет":"Тёмно-вишнёвый","Размеры":"32x42x12 см","Состояние":"Отличное"},
+      stock: 2, price: "11 200 ₽", similarIds: [1,2,6]
+    },
+    4: {
+      id: 4, name: "Ремень «Western», 80-е", category: "Ремни & Пояса",
+      mainImage: "images/product-belt-1.jpg",
+      fullDescription: "Широкий кожаный ремень с тиснением, латунная пряжка. Производство США, 1985 г. Отличное состояние, длина 110 см.",
+      characteristics: {"Материал":"Кожа","Страна":"США","Год":"1985","Цвет":"Коричневый","Длина":"110 см","Пряжка":"Латунь"},
+      stock: 4, price: "4 500 ₽", similarIds: [5,6,7]
+    },
+    5: {
+      id: 5, name: "Пояс-корсет", category: "Ремни & Пояса",
+      mainImage: "images/product-belt-2.jpg",
+      fullDescription: "Кожаный пояс-корсет, регулируемый, винтажная фурнитура. Европа, 1990 г. Ширина 8 см, универсальный размер.",
+      characteristics: {"Материал":"Кожа","Страна":"Германия","Год":"1990","Цвет":"Чёрный","Ширина":"8 см","Фурнитура":"Металл"},
+      stock: 2, price: "5 200 ₽", similarIds: [4,6,8]
+    },
+    6: {
+      id: 6, name: "Ремень с цепочкой", category: "Ремни & Пояса",
+      mainImage: "images/product-belt-3.jpg",
+      fullDescription: "Узкий ремень из мягкой кожи, серебристая цепочка-вставка. Италия, 1988 г. Длина 95 см.",
+      characteristics: {"Материал":"Кожа/металл","Страна":"Италия","Год":"1988","Цвет":"Чёрный","Длина":"95 см"},
+      stock: 3, price: "3 900 ₽", similarIds: [4,5,9]
+    },
+    7: {
+      id: 7, name: "Брошь «Камея», 60-е", category: "Украшения & Броши",
+      mainImage: "images/product-jewelry-1.jpg",
+      fullDescription: "Брошь-камея, ручная резьба по перламутру, серебро 925. Англия, 1960-е. Размер 4 см.",
+      characteristics: {"Материал":"Перламутр, серебро","Страна":"Англия","Год":"1965","Тип":"Брошь"},
+      stock: 1, price: "3 200 ₽", similarIds: [8,9,10]
+    },
+    8: {
+      id: 8, name: "Колье-жгут", category: "Украшения & Броши",
+      mainImage: "images/product-jewelry-2.jpg",
+      fullDescription: "Многоярусное колье из стекляруса, металлическая фурнитура. Франция, 1980 г. Длина 50 см.",
+      characteristics: {"Материал":"Стеклярус, металл","Страна":"Франция","Год":"1980","Цвет":"Бордовый","Длина":"50 см"},
+      stock: 2, price: "2 800 ₽", similarIds: [7,9,11]
+    },
+    9: {
+      id: 9, name: "Серьги-гвоздики", category: "Украшения & Броши",
+      mainImage: "images/product-jewelry-3.jpg",
+      fullDescription: "Эмаль, винтажная позолота, 1980-е. Застёжка-гвоздик. Диаметр 1,5 см.",
+      characteristics: {"Материал":"Металл, эмаль","Страна":"Чехословакия","Год":"1985","Цвет":"Зелёный"},
+      stock: 3, price: "1 900 ₽", similarIds: [7,8,12]
+    },
+    10: {
+      id: 10, name: "Фетровая шляпа", category: "Головные уборы",
+      mainImage: "images/product-hat-1.jpg",
+      fullDescription: "Мягкая фетровая шляпа, лента, размер 56-58. Германия, 1980-е. Поля 7 см.",
+      characteristics: {"Материал":"Фетр","Страна":"Германия","Год":"1985","Размер":"56-58","Цвет":"Шоколад"},
+      stock: 1, price: "4 200 ₽", similarIds: [11,12,13]
+    },
+    11: {
+      id: 11, name: "Берет", category: "Головные уборы",
+      mainImage: "images/product-hat-2.jpg",
+      fullDescription: "Шерстяной берет, винтажный помпон, цвет бордо. Франция, 1970-е. Универсальный размер.",
+      characteristics: {"Материал":"Шерсть","Страна":"Франция","Год":"1978","Цвет":"Бордо"},
+      stock: 2, price: "2 500 ₽", similarIds: [10,12,14]
+    },
+    12: {
+      id: 12, name: "Кепи 80-х", category: "Головные уборы",
+      mainImage: "images/product-hat-3.jpg",
+      fullDescription: "Хлопковое кепи в клетку, регулируемый размер. Англия, 1987 г.",
+      characteristics: {"Материал":"Хлопок","Страна":"Англия","Год":"1987","Цвет":"Клетка"},
+      stock: 3, price: "3 000 ₽", similarIds: [10,11,15]
+    },
+    13: {
+      id: 13, name: "Шелковый платок", category: "Платки & Шарфы",
+      mainImage: "images/product-scarf-1.jpg",
+      fullDescription: "Ручная роспись по шёлку, размер 90x90 см. Италия, 1980-е.",
+      characteristics: {"Материал":"Шёлк","Страна":"Италия","Год":"1985","Размер":"90x90 см","Рисунок":"Цветочный"},
+      stock: 2, price: "3 500 ₽", similarIds: [14,15,16]
+    },
+    14: {
+      id: 14, name: "Пашмина", category: "Платки & Шарфы",
+      mainImage: "images/product-scarf-2.jpg",
+      fullDescription: "Кашемировая пашмина с бахромой, тёплый бежевый оттенок. Непал, 1990 г. Размер 70x200 см.",
+      characteristics: {"Материал":"Кашемир","Страна":"Непал","Год":"1990","Цвет":"Бежевый","Размер":"70x200 см"},
+      stock: 1, price: "5 000 ₽", similarIds: [13,15,17]
+    },
+    15: {
+      id: 15, name: "Винтажный шарф", category: "Платки & Шарфы",
+      mainImage: "images/product-scarf-3.jpg",
+      fullDescription: "Шерстяной шарф в клетку, оригинальная этикетка. Шотландия, 1988 г. Размер 30x150 см.",
+      characteristics: {"Материал":"Шерсть","Страна":"Шотландия","Год":"1988","Цвет":"Клетка","Размер":"30x150 см"},
+      stock: 3, price: "2 800 ₽", similarIds: [13,14,18]
+    },
+    16: {
+      id: 16, name: "Очки «Кошачий глаз»", category: "Очки & Оправы",
+      mainImage: "images/product-glasses-1.jpg",
+      fullDescription: "Пластиковая оправа «кошачий глаз», оригинальные стёкла. США, 1960-е. В комплекте винтажный кейс.",
+      characteristics: {"Материал":"Пластик","Страна":"США","Год":"1965","Форма":"Кошачий глаз","Ширина оправы":"13 см"},
+      stock: 1, price: "4 800 ₽", similarIds: [17,18,1]
+    },
+    17: {
+      id: 17, name: "Оверсайз оправа", category: "Очки & Оправы",
+      mainImage: "images/product-glasses-2.jpg",
+      fullDescription: "Крупная оправа металл/рог, 1990-е. Линзы без диоптрий. Ширина оправы 14 см.",
+      characteristics: {"Материал":"Металл/рог","Страна":"Италия","Год":"1992","Форма":"Оверсайз","Цвет":"Черепаховый"},
+      stock: 2, price: "5 200 ₽", similarIds: [16,18,4]
+    },
+    18: {
+      id: 18, name: "Металлическая оправа", category: "Очки & Оправы",
+      mainImage: "images/product-glasses-3.jpg",
+      fullDescription: "Тонкая металлическая оправа, круглые линзы. Франция, 1988 г. Стиль «интеллектуал».",
+      characteristics: {"Материал":"Металл","Страна":"Франция","Год":"1988","Форма":"Круглые","Цвет":"Золотистый"},
+      stock: 3, price: "3 900 ₽", similarIds: [16,17,6]
+    }
+  };
+
+  // ==================== ФУНКЦИЯ ДОБАВЛЕНИЯ В КОРЗИНУ ====================
+  const CART_KEY = 'dustshine_cart';
+
+  function addToCart(product) {
+    let cart = localStorage.getItem(CART_KEY);
+    cart = cart ? JSON.parse(cart) : [];
+    const existingIndex = cart.findIndex(item => item.id === product.id);
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += product.quantity;
+    } else {
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        category: product.category,
+        quantity: product.quantity
+      });
+    }
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  }
+
+  function getProductIdFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    return id ? parseInt(id) : null;
+  }
+
+  function renderProductDetail(productId) {
+    const container = document.getElementById('productDetailContainer');
+    const product = productsDatabase[productId];
+    if (!product) {
+      container.innerHTML = `<div class="error-state">Товар не найден. <a href="category.html">Вернуться к категориям</a></div>`;
+      return;
+    }
+
+    let charsHtml = '';
+    for (const [key, value] of Object.entries(product.characteristics)) {
+      charsHtml += `<div class="char-row"><span class="char-name">${key}:</span><span class="char-value">${value}</span></div>`;
+    }
+    const stockStatus = product.stock > 0 
+      ? `<span class="in-stock">✓ В наличии: ${product.stock} шт.</span>` 
+      : `<span class="out-of-stock">✗ Нет в наличии</span>`;
+
+    const html = `
+      <div class="product-card-layout">
+        <div class="product-main-row">
+          <div class="product-image-col">
+            <img src="${product.mainImage}" alt="${product.name}" onerror="this.src='https://placehold.co/600x800/E6D2AE/4A0D17?text=${encodeURIComponent(product.name)}'">
+          </div>
+          <div class="product-info-col">
+            <h1 class="product-title">${product.name}</h1>
+            <div class="product-category">${product.category}</div>
+            <div class="product-price">${product.price}</div>
+            <div class="product-full-description"><h3>Описание</h3><p>${product.fullDescription}</p></div>
+            <div class="stock-info">${stockStatus}</div>
+            <div class="cart-controls">
+              <div class="quantity-selector">
+                <button class="qty-btn" id="decrQty">−</button>
+                <input type="number" id="qtyInput" value="1" min="1" max="${product.stock}" step="1">
+                <button class="qty-btn" id="incrQty">+</button>
+              </div>
+              <button class="add-to-cart-btn" id="addToCartBtn" ${product.stock === 0 ? 'disabled' : ''}>Добавить в корзину</button>
+            </div>
+            <div id="cartMessage" class="cart-message"></div>
+          </div>
+        </div>
+        <div class="product-characteristics-bottom"><h3>Характеристики</h3><div class="chars-grid">${charsHtml}</div></div>
+      </div>
+    `;
+    container.innerHTML = html;
+
+    const decrBtn = document.getElementById('decrQty'), incrBtn = document.getElementById('incrQty'), qtyInput = document.getElementById('qtyInput');
+    const addBtn = document.getElementById('addToCartBtn'), msgDiv = document.getElementById('cartMessage');
+    if (decrBtn && incrBtn && qtyInput) {
+      const maxStock = product.stock;
+      const updateQty = () => { let val = parseInt(qtyInput.value); if (isNaN(val)) val = 1; val = Math.min(maxStock, Math.max(1, val)); qtyInput.value = val; };
+      decrBtn.onclick = () => { let val = parseInt(qtyInput.value); if (val > 1) qtyInput.value = val - 1; updateQty(); };
+      incrBtn.onclick = () => { let val = parseInt(qtyInput.value); if (val < maxStock) qtyInput.value = val + 1; updateQty(); };
+      qtyInput.onchange = updateQty;
+    }
+    if (addBtn) {
+      addBtn.onclick = () => {
+        const quantity = parseInt(qtyInput.value);
+        const priceNumber = parseInt(product.price.replace(/\s/g, '').replace('₽', ''));
+        addToCart({
+          id: product.id,
+          name: product.name,
+          price: priceNumber,
+          image: product.mainImage,
+          category: product.category,
+          quantity: quantity
+        });
+        msgDiv.innerHTML = `✅ Товар "${product.name}" в количестве ${quantity} шт. добавлен в корзину!`;
+        msgDiv.style.opacity = '1';
+        setTimeout(() => msgDiv.style.opacity = '0', 3000);
+      };
+    }
+  }
+
+  function renderSimilarProducts(productId) {
+    const product = productsDatabase[productId];
+    if (!product || !product.similarIds || product.similarIds.length === 0) {
+      document.getElementById('similarGrid').innerHTML = '<div class="no-similar">Нет похожих товаров</div>';
+      return;
+    }
+    const similar = product.similarIds.map(id => productsDatabase[id]).filter(p => p);
+    const similarHtml = similar.map(p => `
+      <div class="category-card similar-card">
+        <div class="card-image-wrapper">
+          <img src="${p.mainImage}" alt="${p.name}" class="category-img" onerror="this.src='https://placehold.co/600x800/E6D2AE/4A0D17?text=${encodeURIComponent(p.name)}'">
+        </div>
+        <div class="card-info">
+          <h3 class="card-category">${p.name}</h3>
+          <p class="card-desc">${p.fullDescription.substring(0, 80)}…</p>
+          <div class="similar-price">${p.price}</div>
+          <a href="product-detail.html?id=${p.id}" class="card-link">Подробнее →</a>
+        </div>
+      </div>
+    `).join('');
+    document.getElementById('similarGrid').innerHTML = similarHtml;
+  }
+
+  // Инициализация и модальное окно
+  const productId = getProductIdFromUrl();
+  if (productId && productsDatabase[productId]) {
+    renderProductDetail(productId);
+    renderSimilarProducts(productId);
+  } else {
+    document.getElementById('productDetailContainer').innerHTML = `<div class="error-state">Товар не выбран или не существует. <a href="category.html">Вернуться к покупкам</a></div>`;
+    document.getElementById('similarGrid').innerHTML = '';
+  }
+
+  // Модальное окно для увеличения фото
+  const modal = document.getElementById('imageModal'), modalImg = document.getElementById('modalImage'), modalCaption = document.getElementById('modalCaption'), closeBtn = document.querySelector('.modal-close');
+  document.addEventListener('click', (e) => {
+    const wrapper = e.target.closest('.card-image-wrapper') || e.target.closest('.product-image-col');
+    if (wrapper) {
+      const img = wrapper.querySelector('img');
+      if (img && img.src) {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+        modalCaption.textContent = img.alt || 'Винтажное изделие';
+        e.stopPropagation();
+      }
+    }
+  });
+  const closeModal = () => modal.style.display = 'none';
+  modal.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+  modalImg.addEventListener('click', (e) => e.stopPropagation());
+</script>
+</body>
+</html>

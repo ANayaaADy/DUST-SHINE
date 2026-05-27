@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас | DUST&SHINE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+
+    <!-- ШАПКА -->
+<header class="header">
+  <a href="index.html" class="header-logo">
+    <img src="images/logo.png" alt="DUST&SHINE">
+  </a>
+  <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="category.html">Категории товаров</a>
+    <a href="delivery.html">Доставка и оплата</a>
+    <a href="contacs.html">Контакты</a>
+    <a href="about.html">О нас</a>
+  </nav>
+  <div class="icons">
+    <!-- Личный кабинет -->
+    <div class="icon-btn" title="Личный кабинет">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 21c0-3.2-3.6-5-8-5s-8 1.8-8 5"></path>
+        <circle cx="12" cy="8" r="4"></circle>
+      </svg>
+    </div>
+
+    <!-- Корзина (теперь ссылка) -->
+    <a href="cart.html" class="icon-btn" title="Корзина">
+      <svg viewBox="0 0 24 24">
+        <circle cx="9" cy="20" r="1.5"></circle>
+        <circle cx="18" cy="20" r="1.5"></circle>
+        <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H7"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+    <!-- ОСНОВНОЙ БЛОК -->
+    <section class="about">
+
+      <h1 class="about-title">О нас</h1>
+
+      <!-- ПЕРВЫЙ БЛОК -->
+      <div class="about-block fade-in">
+        <div class="about-text">
+          <p>
+            Dust & Shine — это не просто магазин. Это место, где время останавливается, а история обретает новый блеск.
+          </p>
+          <p>
+            Мы находим те самые винтажные сумки и аксессуары, на которых осталась «пыль» прошлых десятилетий — следы уникального мастерства, безупречных материалов и смелых дизайнерских решений.
+          </p>
+          <p>
+            Наша миссия — бережно стереть эту пыль времени, чтобы вещь заиграла своим вторым — вечным — сиянием.
+          </p>
+        </div>
+
+        <div class="about-image">
+          <img src="images/about1.jpg" alt="Винтаж аксессуар">
+        </div>
+      </div>
+
+      <!-- ВТОРОЙ БЛОК -->
+      <div class="about-block reverse fade-in">
+        <div class="about-image">
+          <img src="images/about2.jpg" alt="Детали винтажа">
+        </div>
+
+        <div class="about-text">
+          <p>
+            Каждая сумка, каждый платок или пояс в нашей коллекции — это не серийный штамп, а характер.
+          </p>
+          <p>
+            Это качество, которое не стареет, и актуальность, которая не зависит от капризов сезонной моды.
+          </p>
+          <p>
+            Это тот самый глоток свежего воздуха для вашего стиля, способный одним штрихом сделать образ глубоким, запоминающимся и по-настоящему вашим.
+          </p>
+        </div>
+      </div>
+
+      <!-- ТРЕТИЙ БЛОК -->
+      <<div class="about-final fade-in">
+        <div class="about-final-text">
+          <p>
+            Мы тщательно отбираем и реставрируем вещи, чтобы предложить вам не просто ретро-предмет, а готовую историю, жаждущую новых приключений.
+          </p>
+          <h2>Позвольте вещам с душой стать вашими верными спутниками!</h2>
+        </div>
+
+        <div class="about-final-image">
+          <img src="images/about3.jpg" alt="Винтаж стиль">
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
+<script>
+  const elements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+<footer class="footer">
+
+  <div class="footer-content">
+
+    <!-- ЛЕВАЯ ЧАСТЬ -->
+    <div class="footer-left">
+
+      <h2>DUST&SHINE</h2>
+
+      <p>
+        Винтажные аксессуары с историей,<br>
+        которые продолжают жить в современности.
+      </p>
+
+    </div>
+
+    <!-- ЦЕНТР -->
+    <div class="footer-center">
+
+      <a href="index.html">Главная</a>
+      <a href="category.html">Категории товаров</a>
+      <a href="delivery.html">Доставка и оплата</a>
+      <a href="about.html">О нас</a>
+
+    </div>
+
+    <!-- ПРАВАЯ ЧАСТЬ -->
+    <div class="footer-right">
+
+  <p>dustandshine@gmail.com</p>
+  <p>+7 (999) 999-99-99</p>
+
+  <div class="footer-authors">
+    <span>Авторы проекта:</span>
+    <p>Бежанова Диана</p>
+    <p>Дыняк Анастасия</p>
+    <p>Группа 2-ГД-4</p>
+  </div>
+
+</div>
+
+  </div>
+
+</footer>
+</html>

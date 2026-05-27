@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Категории товаров | DUST&SHINE — Винтаж с историей</title>
+
+  <!-- Шрифт Onest + альтернатива -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Основные стили (общие для всего сайта) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Уникальные стили для страницы категорий -->
+  <link rel="stylesheet" href="category-page.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- ШАПКА (идентично главной) -->
+  <header class="header">
+    <a href="index.html" class="header-logo">
+    <img src="images/logo.png" alt="DUST&SHINE">
+  </a>
+  <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="category.html" class="active-nav">Категории товаров</a>
+    <a href="delivery.html">Доставка и оплата</a>
+    <a href="contacs.html">Контакты</a>
+    <a href="about.html">О нас</a>
+    <!-- Удаляем пустую <a href="cart.html" class="icon-btn"></a> -->
+  </nav>
+  <div class="icons">
+        <!-- Личный кабинет -->
+<a href="account.html" class="icon-btn" title="Личный кабинет">
+  <svg viewBox="0 0 24 24">
+    <path d="M20 21c0-3.2-3.6-5-8-5s-8 1.8-8 5"></path>
+    <circle cx="12" cy="8" r="4"></circle>
+  </svg>
+    <a href="cart.html" class="icon-btn" title="Корзина">
+      <svg viewBox="0 0 24 24">
+        <circle cx="9" cy="20" r="1.5"></circle>
+        <circle cx="18" cy="20" r="1.5"></circle>
+        <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H7"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+  
+    <!-- ========== СЕКЦИЯ 2: СЕТКА КАТЕГОРИЙ (3+ категории) ========== -->
+    <section class="categories-grid-section">
+      <div class="section-caption">
+        <h2 class="beladonna-title">Исследуйте коллекции</h2>
+        <div class="caption-line"></div>
+      </div>
+
+      <div class="categories-grid">
+        <!-- Категория 1: Сумки -->
+        <div class="category-card" data-category="bags">
+          <div class="card-image-wrapper" data-modal-img="images/category-bags.jpg">
+            <img src="images/category-bags.jpg" alt="Винтажные сумки" class="category-img" onerror="this.src='https://placehold.co/600x800/E6D2AE/4A0D17?text=Сумки+Vintage'">
+          </div>
+          <div class="card-info">
+            <h3 class="card-category">Сумки &amp; Багаж</h3>
+            <p class="card-desc">Кожа, замша, легендарные модели 80–90-х. Каждая сумка прошла реставрацию.</p>
+            <a href="products.html?cat=bags" class="card-link">Смотреть подборку →</a>
+          </div>
+        </div>
+
+        <!-- Категория 2: Ремни и аксессуары -->
+        <div class="category-card" data-category="belts">
+          <div class="card-image-wrapper" data-modal-img="images/category-belts.jpg">
+            <img src="images/category-belts.jpg" alt="Винтажные ремни" class="category-img" onerror="this.src='https://placehold.co/600x800/E6D2AE/4A0D17?text=Ремни+и+аксессуары'">
+          </div>
+          <div class="card-info">
+            <h3 class="card-category">Ремни &amp; Пояса</h3>
+            <p class="card-desc">Акценты, которые меняют образ. Настоящая кожа, пряжки с историей.</p>
+            <a href="products.html?cat=belts" class="card-link">Выбрать ремень →</a>
+          </div>
+        </div>
+
+        <!-- Категория 3: Украшения & броши -->
+        <div class="category-card" data-category="jewelry">
+          <div class="card-image-wrapper" data-modal-img="images/category-jewelry.jpg">
+            <img src="images/category-jewelry.jpg" alt="Винтажные украшения" class="category-img" onerror="this.src='https://placehold.co/600x800/E6D2AE/4A0D17?text=Украшения+Vintage'">
+          </div>
+          <div class="card-info">
+            <h3 class="card-category">Украшения &amp; Броши</h3>
+            <p class="card-desc">Эмаль, серебро, винтажная бижутерия — элегантность вне времени.</p>
+            <a href="products.html?cat=jewelry" class="card-link">Узнать детали →</a>
+          </div>
+        </div>
+
+        <!-- Категория 4: Головные уборы -->
+        <div class="category-card" data-category="hats">
+          <div class="card-image-wrapper" data-modal-img="images/category-hats.jpg">
+            <img src="images/category-hats.jpg" alt="Винтажные шляпы" class="category-img" onerror="this.src='https://placehold.co/600x800/E6D2AE/4A0D17?text=Головные+уборы'">
+          </div>
+          <div class="card-info">
+            <h3 class="card-category">Головные уборы</h3>
+            <p class="card-desc">Шляпы, береты, кепи — деталь, которая создаёт силуэт и настроение.</p>
+            <a href="products.html?cat=hats" class="card-link">Исследовать →</a>
+          </div>
+        </div>
+
+        <!-- Категория 5: Текстиль и платки -->
+        <div class="category-card" data-category="scarves">
+          <div class="card-image-wrapper" data-modal-img="images/category-scarves.jpg">
+            <img src="images/category-scarves.jpg" alt="Винтажные платки" class="category-img" onerror="this.src='https://placehold.co/600x800/E6D2AE/4A0D17?text=Платки+и+шарфы'">
+          </div>
+          <div class="card-info">
+            <h3 class="card-category">Платки &amp; Шарфы</h3>
+            <p class="card-desc">Шелк, винтажные принты, уникальные расцветки для вашего стиля.</p>
+            <a href="products.html?cat=scarves" class="card-link">Посмотреть платки →</a>
+          </div>
+        </div>
+        <!-- Категория 6: Очки и оправы -->
+<div class="category-card" data-category="glasses">
+  <div class="card-image-wrapper" data-modal-img="images/category-glasses.jpg">
+    <img src="images/category-glasses.jpg" alt="Винтажные очки" class="category-img" onerror="this.src='https://placehold.co/600x800/E6D2AE/4A0D17?text=Очки+Vintage'">
+  </div>
+  <div class="card-info">
+    <h3 class="card-category">Очки &amp; Оправы</h3>
+    <p class="card-desc">Стильные силуэты 60–90-х: «кошачий глаз», оверсайз, металл и рог. Завершите образ винтажной оптикой.</p>
+    <a href="products.html?cat=glasses" class="card-link">Выбрать оправу →</a>
+  </div>
+</div>
+    </section>
+
+    <!-- ========== СЕКЦИЯ 3: ИНСПИРАЦИЯ + ПРЕИМУЩЕСТВА (коллаж / текст) ========== -->
+    <section class="inspiration-advantage">
+      <div class="inspiration-inner">
+        <div class="inspiration-text-block">
+          <span class="inspiration-badge">почему dust&shine</span>
+          <h2 class="beladonna-title left-align">Вторая жизнь <br>с безупречным стилем</h2>
+          <p class="inspiration-paragraph">
+            Мы отбираем только аутентичные вещи с характером: каждая проходит профессиональную чистку, 
+            реставрацию и проверку на подлинность. Наша миссия — продлить историю, сохранив душу оригинала.
+          </p>
+          <ul class="advantage-list">
+            <li>✔️ Экспертная реставрация кожи и замши</li>
+            <li>✔️ Каждая вещь имеет паспорт состояния</li>
+            <li>✔️ Этичное потребление и осознанный выбор</li>
+            <li>✔️ Доставка по всей России</li>
+          </ul>
+          <a href="#" class="shop-btn secondary-btn">Узнать о процессе</a>
+        </div>
+        <div class="inspiration-media" data-modal-img="images/about-block.jpg">
+          <img src="images/about-block.jpg" alt="Атмосфера DUST SHINE — винтажная эстетика" onerror="this.src='https://placehold.co/640x800/E6D2AE/4A0D17?text=Винтаж+эстетика'">
+        </div>
+      </div>
+    </section>
+
+    <!-- Скрытое модальное окно для увеличения (как на главной) -->
+    <div class="image-modal" id="imageModal">
+      <div class="modal-close" id="modalClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </div>
+      <img class="modal-content" id="modalImage" alt="Увеличенное изображение">
+    </div>
+  </div>
+
+  <!-- единый скрипт для модального окна (работа с data-modal-img) -->
+  <script>
+    (function() {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const closeBtn = document.getElementById('modalClose');
+      const clickableWrappers = document.querySelectorAll('[data-modal-img]');
+      
+      function openModal(src, altText) {
+        if (!modal || !modalImg) return;
+        modalImg.src = src;
+        modalImg.alt = altText || 'Изображение DUST SHINE';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeModalFn() {
+        if (!modal) return;
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+          if (!modal.classList.contains('active')) modalImg.src = '';
+        }, 300);
+      }
+      
+      if (clickableWrappers.length) {
+        clickableWrappers.forEach(container => {
+          const imgEl = container.querySelector('img');
+          if (imgEl) {
+            container.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const src = imgEl.getAttribute('src');
+              const alt = imgEl.getAttribute('alt') || 'Изображение категории';
+              if (src) openModal(src, alt);
+            });
+          } else {
+            const directSrc = container.getAttribute('data-modal-img');
+            if (directSrc) {
+              container.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openModal(directSrc, 'Винтаж DUST SHINE');
+              });
+            }
+          }
+        });
+      }
+      
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModalFn();
+        });
+      }
+      if (closeBtn) closeBtn.addEventListener('click', closeModalFn);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeModalFn();
+      });
+      if (modalImg) modalImg.addEventListener('click', (e) => e.stopPropagation());
+    })();
+  </script>
+</body>
+<footer class="footer">
+
+  <div class="footer-content">
+
+    <!-- ЛЕВАЯ ЧАСТЬ -->
+    <div class="footer-left">
+
+      <h2>DUST&SHINE</h2>
+
+      <p>
+        Винтажные аксессуары с историей,<br>
+        которые продолжают жить в современности.
+      </p>
+
+    </div>
+
+    <!-- ЦЕНТР -->
+    <div class="footer-center">
+
+      <a href="index.html">Главная</a>
+      <a href="category.html">Категории товаров</a>
+      <a href="delivery.html">Доставка и оплата</a>
+      <a href="about.html">О нас</a>
+
+    </div>
+
+    <!-- ПРАВАЯ ЧАСТЬ -->
+    <div class="footer-right">
+
+  <p>dustandshine@gmail.com</p>
+  <p>+7 (999) 999-99-99</p>
+
+  <div class="footer-authors">
+    <span>Авторы проекта:</span>
+    <p>Бежанова Диана</p>
+    <p>Дыняк Анастасия</p>
+    <p>Группа 2-ГД-4</p>
+  </div>
+
+</div>
+
+  </div>
+
+</footer>
+</html>

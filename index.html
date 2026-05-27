@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DUST&SHINE</title>
+
+  <!-- Шрифт Onest -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Основные стили -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+   
+    <!-- ШАПКА -->
+    <header class="header">
+      <a href="index.html" class="header-logo">
+    <img src="images/logo.png" alt="DUST&SHINE">
+  </a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="category.html">Категории товаров</a>
+        <a href="delivery.html">Доставка и оплата</a>
+        <a href="contacs.html">Контакты</a>
+        <a href="about.html">О нас</a>
+      </nav>
+
+      <div class="icons">
+        <!-- Личный кабинет -->
+<a href="account.html" class="icon-btn" title="Личный кабинет">
+  <svg viewBox="0 0 24 24">
+    <path d="M20 21c0-3.2-3.6-5-8-5s-8 1.8-8 5"></path>
+    <circle cx="12" cy="8" r="4"></circle>
+  </svg>
+</a>
+           <!-- Корзина -->
+    <a href="cart.html" class="icon-btn" title="Корзина">
+      <svg viewBox="0 0 24 24">
+        <circle cx="9" cy="20" r="1.5"></circle>
+        <circle cx="18" cy="20" r="1.5"></circle>
+        <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H7"></path>
+      </svg>
+    </a>
+
+  </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
+    <section class="hero">
+  <div class="hero-plate">   
+    <div class="hero-left">
+      <h1 class="hero-title">DUST&SHINE</h1>
+      <p class="hero-text">
+        Мы снимаем пелену времени, чтобы открыть нетускнеющее качество и красоту.
+        Диалог эпох в каждой вещи.
+      </p>
+      <a href="category.html" class="shop-btn">К покупкам</a>
+    </div>
+    <div class="hero-right">
+      <img src="images/hero-collage.jpg" alt="Главное фото DUST SHINE">
+    </div>
+  </div>
+</section>
+
+    <!-- ВТОРОЙ БЛОК DUST & SHINE -->
+    <section class="second-about">
+      <h2 class="second-title">DUST&SHINE</h2>
+    </section>
+
+    <!-- БЛОК О МАГАЗИНЕ С КАРТИНКОЙ -->
+     <section class="info-section">
+
+  <div class="info-card">
+    <p>
+      Настоящий винтаж — это не просто возраст.
+      Мы тщательно проверяем каждую вещь на подлинность, сохранность конструкции и материалов.
+      Вы покупаете не стилизацию, а исторический оригинал с гарантией качества.
+
+      Наш жесткий отбор — это фильтр против просто старых вещей.
+      В нашей коллекции только аксессуары, чья конструкция, кожа и фурнитура выдержали испытание временем.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <p>
+      Выбирая вещи с историей, вы делаете осознанный шаг против быстрой моды.
+      Вы даёте шедеврам прошлого второй шанс, вкладывая в них новые смыслы и сохраняя ресурсы планеты.
+
+      Они несут в себе энергию эпох, мастерства и прежней любви.
+      Это больше, чем аксессуар — это будущая реликвия с вашей собственной историей.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <p>
+      Наша миссия — дать изысканным вещам из прошлого новую жизнь в достойных руках.
+      Здесь нет двух одинаковых сумок.
+      Каждая вещь — единственный экземпляр со своим прошлым.
+
+      Найдите свою историю.
+      Повторить её невозможно.
+
+      Мы находим и представляем уникальные характеры из прошлого.
+    </p>
+  </div>
+
+</section>
+
+    <!-- ГАЛЕРЕЯ - обновите секцию, добавив data-modal-img -->
+<section class="gallery-section">
+  <div class="gallery-header">
+    <h2 class="gallery-title">ГАЛЕРЕЯ</h2>
+  </div>
+  
+  <div class="gallery-image-wrapper" data-modal-img="images/galereeya.png">
+    <img src="images/galereeya.png" alt="Большое фото галереи" class="gallery-main-img">
+  </div>
+  
+  <div class="gallery-button-wrapper">
+    <a href="about.html" class="shop-btn">Узнать больше</a>
+  </div>
+</section>
+
+<!-- НОВОСТИ - обновите, добавив data-modal-img к оберткам изображений -->
+<section class="news-section">
+  <div class="news-header">
+    <h2 class="news-title">НОВОСТИ</h2>
+  </div>
+
+  <div class="news-grid">
+    <!-- ПЕРВАЯ НОВОСТЬ -->
+    <a href="article1.html" class="news-card news-card-large">
+
+  <div class="news-img-wrapper" data-modal-img="images/novosty.png">
+    <img src="images/novosty.png" alt="Новость 1">
+  </div>
+
+  <div class="news-text-wrapper">
+    <p>
+      В рамках нашей философии бережного отношения к вещам с историей мы подготовили подробный гайд. 
+      Узнайте, как правильный уход может продлить жизнь вашей любимой кожаной сумке и сохранить её уникальный характер.
+    </p>
+  </div>
+
+</a>
+   <a href="article2.html" class="news-card news-card-small">
+
+  <div class="news-text-wrapper">
+    <p>
+      Хотите узнать, какой винтажный ремень подчеркнёт талию с платьем, а какой задаст характер джинсам? 
+      Мы подготовили небольшой гид по стилизации главного аксессуара сезона из нашей коллекции.
+    </p>
+  </div>
+
+  <div class="news-img-wrapper" data-modal-img="images/galrrry.jpg">
+    <img src="images/remennn.jpg" alt="Новость 2">
+  </div>
+
+</a>
+</section>
+
+<!-- Добавьте модальное окно перед закрывающим тегом body -->
+<div class="image-modal" id="imageModal">
+  <div class="modal-close" id="modalClose">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <img class="modal-content" id="modalImage" alt="Увеличенное изображение">
+</div>
+
+<script>
+  // Скрипт для увеличения изображений при клике
+  (function() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.getElementById('modalClose');
+    
+    // Находим все элементы, у которых есть атрибут data-modal-img
+    const clickableImages = document.querySelectorAll('[data-modal-img]');
+    
+    // Функция открытия модального окна
+    function openModal(imgSrc, altText) {
+      modalImg.src = imgSrc;
+      modalImg.alt = altText || 'Увеличенное изображение';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Блокируем скролл фона
+    }
+    
+    // Функция закрытия модального окна
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = ''; // Возвращаем скролл
+      // Очищаем src для оптимизации
+      setTimeout(() => {
+        if (!modal.classList.contains('active')) {
+          modalImg.src = '';
+        }
+      }, 300);
+    }
+    
+    // Добавляем обработчики клика на все кликабельные изображения
+    clickableImages.forEach(container => {
+      // Находим изображение внутри контейнера
+      const img = container.querySelector('img');
+      if (img) {
+        container.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const imgSrc = img.getAttribute('src');
+          const imgAlt = img.getAttribute('alt');
+          if (imgSrc) {
+            openModal(imgSrc, imgAlt);
+          }
+        });
+      } else {
+        // Если изображение напрямую указано в data-modal-img
+        const directSrc = container.getAttribute('data-modal-img');
+        if (directSrc) {
+          container.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openModal(directSrc, 'Изображение');
+          });
+        }
+      }
+    });
+    
+    // Закрытие по клику на фон
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+    
+    // Закрытие по кнопке
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+    
+    // Закрытие по клавише Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+    
+    // Предотвращаем всплытие клика по изображению
+    if (modalImg) {
+      modalImg.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+  })();
+</script>
+  </div>
+  <!-- МОДАЛЬНОЕ ОКНО ОФОРМЛЕНИЯ -->
+<div class="modal-overlay" id="checkoutModal">
+
+  <div class="modal">
+
+    <h2>Оформление заказа</h2>
+
+    <!-- ШАГ 1 -->
+    <div class="step" id="step1">
+      <input type="text" placeholder="ФИО" id="name">
+      <input type="text" placeholder="Номер телефона" id="phone">
+
+      <button onclick="nextStep(2)">Далее</button>
+    </div>
+
+    <!-- ШАГ 2 -->
+    <div class="step hidden" id="step2">
+      <h3>Способ доставки</h3>
+
+      <label><input type="radio" name="delivery" value="courier"> Доставка курьером</label>
+      <label><input type="radio" name="delivery" value="pickup"> Самовывоз</label>
+      <label><input type="radio" name="delivery" value="post"> Почтовое отделение</label>
+
+      <button onclick="nextStep(3)">Далее</button>
+    </div>
+
+    <!-- ШАГ 3 -->
+    <div class="step hidden" id="step3">
+      <h3>Способ оплаты</h3>
+
+      <label><input type="radio" name="payment" value="card"> Картой на сайте</label>
+      <label><input type="radio" name="payment" value="cash"> Наличными при получении</label>
+
+      <button onclick="finishOrder()">Оформить</button>
+    </div>
+
+    <!-- ШАГ 4 -->
+    <div class="step hidden" id="step4">
+      <div class="success">
+        ✅ Заказ оформлен! Ожидайте доставку
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script>
+let currentStep = 1;
+
+const modal = document.getElementById('checkoutModal');
+
+const checkoutBtn = document.querySelector('.checkout-btn');
+
+if (checkoutBtn) {
+  checkoutBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+}
+
+function nextStep(step) {
+  document.getElementById('step' + currentStep).classList.add('hidden');
+  document.getElementById('step' + step).classList.remove('hidden');
+  currentStep = step;
+}
+
+function finishOrder() {
+  document.getElementById('step3').classList.add('hidden');
+  document.getElementById('step4').classList.remove('hidden');
+
+  setTimeout(() => {
+    modal.style.display = 'none';
+
+    // сброс
+    document.getElementById('step4').classList.add('hidden');
+    document.getElementById('step1').classList.remove('hidden');
+    currentStep = 1;
+
+  }, 2000);
+}
+</script>
+</body>
+<footer class="footer">
+
+  <div class="footer-content">
+
+    <!-- ЛЕВАЯ ЧАСТЬ -->
+    <div class="footer-left">
+
+      <h2>DUST&SHINE</h2>
+
+      <p>
+        Винтажные аксессуары с историей,<br>
+        которые продолжают жить в современности.
+      </p>
+
+    </div>
+
+    <!-- ЦЕНТР -->
+    <div class="footer-center">
+
+      <a href="index.html">Главная</a>
+      <a href="category.html">Категории товаров</a>
+      <a href="delivery.html">Доставка и оплата</a>
+      <a href="about.html">О нас</a>
+
+    </div>
+
+    <!-- ПРАВАЯ ЧАСТЬ -->
+    <div class="footer-right">
+
+  <p>dustandshine@gmail.com</p>
+  <p>+7 (999) 999-99-99</p>
+
+  <div class="footer-authors">
+    <span>Авторы проекта:</span>
+    <p>Бежанова Диана</p>
+    <p>Дыняк Анастасия</p>
+    <p>Группа 2-ГД-4</p>
+  </div>
+
+</div>
+
+  </div>
+
+</footer>
+</html>
