@@ -2105,3 +2105,35 @@ overflow: hidden;
     border-radius:24px;
   }
 }
+/* ВСЕ ЗАГОЛОВКИ НА МОБИЛЬНЫХ */
+
+@media (max-width: 768px){
+
+  .about-title,
+  .contacts-title,
+  .delivery-title,
+  .gallery-title,
+  .news-title,
+  .second-title,
+  .cart-title,
+  .care-guide__title,
+  .beladonna-title{
+    font-size: 36px;
+    line-height: 1.15;
+    word-break: break-word;
+  }
+
+}
+@media (max-width: 768px){
+
+  .delivery,
+  .contacts-page,
+  .cart,
+  .info-section,
+  .gallery-section,
+  .about-image-section,
+  .second-about{
+    width: 95%;
+  }
+
+}
