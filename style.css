@@ -2137,3 +2137,37 @@ overflow: hidden;
   }
 
 }
+@media (max-width: 768px){
+
+  .footer-left h2{
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right{
+    text-align: center;
+    width: 100%;
+  }
+
+}
+@media (max-width: 768px){
+
+  .cart-title,
+  .account-title,
+  .account-page h1{
+    font-size: 32px !important;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .cart{
+    width: 95%;
+  }
+
+}
