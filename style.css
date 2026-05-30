@@ -161,7 +161,7 @@ body {
 }
 
 .hero-title {
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
   font-size: 64px;
   font-weight: normal;
   line-height: 1;
@@ -240,7 +240,7 @@ body {
 }
 
 .second-title {
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
   font-size: 64px;
   font-weight: normal;
   text-transform: uppercase;
@@ -277,7 +277,7 @@ body {
 }
 
 .gallery-title {
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
   font-size: 64px;
   font-weight: normal;
   text-transform: uppercase;
@@ -314,7 +314,7 @@ body {
 }
 
 .news-title {
-    font-family: 'Beladonna Modern', serif;
+    font-family: 'BeladonnaModern', serif;
     font-size: 64px;
     font-weight: normal;
     text-transform: uppercase;
@@ -704,7 +704,7 @@ body {
 }
 
 .delivery-title {
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
 
   font-size: 64px;
   font-weight: normal;
@@ -769,7 +769,7 @@ body {
 .about-title {
   margin-left: 10px;
 
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
 
   font-size: 64px;
   font-weight: normal;
@@ -879,7 +879,7 @@ body {
 }
 
 .cart-title {
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
   font-size: 64px;
   font-weight: normal;
   color: #561D1F;
@@ -1084,7 +1084,7 @@ button {
 }
 
 .footer-left h2 {
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
   font-size: 42px;
   color: #F3DDB6;
   margin-bottom: 20px;
@@ -1293,7 +1293,7 @@ overflow: hidden;
   opacity: 0.3;
 }
 .care-guide__title {
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
   color: #3F020A;
 
   font-size: 48px;
@@ -1483,7 +1483,7 @@ overflow: hidden;
 }
 
 .cart-title {
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
   font-size: 64px;
   font-weight: normal;
   color: #561D1F;
@@ -1663,7 +1663,7 @@ overflow: hidden;
 }
 
 .contacts-title {
-  font-family: 'Beladonna Modern', serif;
+  font-family: 'BeladonnaModern', serif;
   font-size: 64px;
   color: #3F020A;
   margin-bottom: 60px;
