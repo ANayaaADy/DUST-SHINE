@@ -2171,3 +2171,12 @@ overflow: hidden;
   }
 
 }
+@media (max-width: 768px) {
+
+  .footer-left h2 {
+    font-size: 26px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+}
