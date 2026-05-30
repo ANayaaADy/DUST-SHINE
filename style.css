@@ -2180,3 +2180,14 @@ overflow: hidden;
   }
 
 }
+@media (max-width: 768px) {
+
+  .hero-title,
+  .second-title {
+    font-size: 30px;
+    line-height: 1;
+    text-align: center;
+    word-break: break-word;
+  }
+
+}
