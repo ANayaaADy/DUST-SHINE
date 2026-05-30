@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  @media (max-width: 768px) {
+  
+  <style>
+     @media (max-width: 768px) {
 
   .cart-title {
     font-size: 32px;
@@ -26,7 +28,6 @@
   }
 
 }
-  <style>
     /* Дополнительные стили для корзины (если нет в style.css) */
     .cart {
       max-width: 1200px;
@@ -134,6 +135,20 @@
       font-size: 20px;
       color: #7A4C3C;
     }
+    @media (max-width: 768px) {
+  .cart-title {
+    font-size: 32px;
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-title {
+    font-size: 28px;
+  }
+}
     /* Модальное окно (оформление заказа) */
     .modal-overlay {
       display: none;
