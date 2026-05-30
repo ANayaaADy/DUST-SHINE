@@ -6,7 +6,10 @@
 }
 
 @font-face {
-   src: url('fonts/BeladonnaModern.woff2') format('woff2');
+  font-family: 'Beladonna Modern';
+  src: url('BeladonnaModern.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
