@@ -2191,3 +2191,11 @@ overflow: hidden;
   }
 
 }
+@media (max-width: 480px) {
+
+  .hero-title,
+  .second-title {
+    font-size: 24px;
+  }
+
+}
